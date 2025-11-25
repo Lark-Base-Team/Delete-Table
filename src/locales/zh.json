@@ -1,3 +1,19 @@
 {
-  "title":"这是中文标题"
+  "tab.tableList": "数据表列表展示",
+  "tab.batchDelete": "批量删除数据表",
+  "filter.search.placeholder": "按名称或ID模糊筛选",
+  "filter.total.label": "总数",
+  "filter.reset": "重置筛选",
+  "action.deleteFiltered": "删除筛选结果",
+  "operator.eq": "等于",
+  "operator.ne": "不等于",
+  "operator.gt": "大于",
+  "operator.ge": "大于或等于",
+  "operator.lt": "小于",
+  "operator.le": "小于或等于",
+  "table.column.name": "名称",
+  "table.column.id": "ID",
+  "table.column.total": "总数",
+  "status.error": "获取失败",
+  "status.loading": "..."
 }

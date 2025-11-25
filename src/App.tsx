@@ -3,6 +3,7 @@ import { bitable, ITableMeta } from "@lark-base-open/js-sdk";
 import { Button, Form } from '@douyinfe/semi-ui';
 import { BaseFormApi } from '@douyinfe/semi-foundation/lib/es/form/interface';
 import { useState, useEffect, useRef, useCallback } from 'react';
+import TableSelector from './components/TableSelector/index';
 
 export default function App() {
   const [tableMetaList, setTableMetaList] = useState<ITableMeta[]>();
@@ -55,17 +56,12 @@ export default function App() {
             </a>
           </div>
         </Form.Slot>
-        <Form.Select field='table' label='Select Table' placeholder="Please select a Table" style={{ width: '100%' }}>
-          {
-            Array.isArray(tableMetaList) && tableMetaList.map(({ name, id }) => {
-              return (
-                <Form.Select.Option key={id} value={id}>
-                  {name}
-                </Form.Select.Option>
-              );
-            })
-          }
-        </Form.Select>
+        <Form.Slot label='Select Table'>
+          <TableSelector onChange={(id) => formApi.current?.setValues({ table: id })} style={{ width: '100%' }} />
+        </Form.Slot>
+        <Form.Slot label='Batch Delete Tables'>
+          <TableSelector deletable style={{ width: '100%' }} />
+        </Form.Slot>
         <Button theme='solid' htmlType='submit'>Add Record</Button>
       </Form>
     </main>

@@ -4,3 +4,59 @@
   border: 1px solid #ffe58f;
   border-radius: 8px
 }
+.filterBar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.filterRow{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.actionsRow{
+  justify-content: flex-end;
+}
+.pageContainer{
+  padding: 10px;
+}
+.toolbarSticky{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg, #fff);
+  padding-bottom: 8px;
+}
+.theme-dark .toolbarSticky{
+  --bg: #1f1f1f;
+}
+.filterItem{
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+.filterItemSmall{
+  flex: 0 1 160px;
+  min-width: 160px;
+}
+.filterActions{
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 480px){
+  .filterItem,
+  .filterItemSmall{
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  .filterActions{
+    width: 100%;
+  }
+  .filterActions .ant-btn{
+    width: 100%;
+    height: 44px;
+  }
+}

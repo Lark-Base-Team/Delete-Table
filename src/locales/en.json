@@ -1,3 +1,19 @@
 {
-  "title":"这是英文标题"
+  "tab.tableList": "Table List",
+  "tab.batchDelete": "Batch Delete",
+  "filter.search.placeholder": "Filter by name or ID",
+  "filter.total.label": "Total",
+  "filter.reset": "Reset Filters",
+  "action.deleteFiltered": "Delete Filtered",
+  "operator.eq": "Equals",
+  "operator.ne": "Not Equals",
+  "operator.gt": "Greater Than",
+  "operator.ge": "Greater Or Equal",
+  "operator.lt": "Less Than",
+  "operator.le": "Less Or Equal",
+  "table.column.name": "Name",
+  "table.column.id": "ID",
+  "table.column.total": "Total",
+  "status.error": "Error",
+  "status.loading": "..."
 }
