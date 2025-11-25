@@ -16,4 +16,17 @@
   "table.column.total": "总数",
   "status.error": "获取失败",
   "status.loading": "..."
+  ,
+  "confirm.delete.title": "确认删除以下数据表？",
+  "confirm.delete.filtered.title": "确认删除筛选出的数据表？",
+  "confirm.ok": "删除",
+  "confirm.cancel": "取消",
+  "batch.placeholder.empty": "暂无数据表",
+  "batch.placeholder.select": "选择待删除的数据表",
+  "batch.deleteSelected": "删除所选",
+  "toast.noPermission": "无删除权限：{{count}}",
+  "toast.deleted": "删除成功：{{count}}",
+  "toast.failed": "删除失败：{{count}}",
+  "toast.loadTablesFailed": "表列表加载失败",
+  "toast.deleteError": "删除异常"
 }

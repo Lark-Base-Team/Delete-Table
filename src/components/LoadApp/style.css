@@ -1,3 +1,11 @@
+/*
+  LoadApp 样式：
+  - .pageContainer：页容器内边距
+  - .toolbarSticky：顶部粘性工具栏，支持主题变量 --bg（暗色由 .theme-dark 注入）
+  - .filterRow / .filterItem / .filterItemSmall：筛选行与项的布局
+  - .filterActions：筛选操作按钮区域，移动端全宽
+  - 响应式：480px 以下控件全宽
+*/
 .errTop{
   padding: 14px;
   background: #fffbe6;

@@ -16,4 +16,17 @@
   "table.column.total": "Total",
   "status.error": "Error",
   "status.loading": "..."
+  ,
+  "confirm.delete.title": "Confirm to delete these tables?",
+  "confirm.delete.filtered.title": "Delete filtered tables?",
+  "confirm.ok": "Delete",
+  "confirm.cancel": "Cancel",
+  "batch.placeholder.empty": "No tables",
+  "batch.placeholder.select": "Select tables to delete",
+  "batch.deleteSelected": "Delete Selected",
+  "toast.noPermission": "No delete permission: {{count}}",
+  "toast.deleted": "Deleted: {{count}}",
+  "toast.failed": "Failed: {{count}}",
+  "toast.loadTablesFailed": "Load tables failed",
+  "toast.deleteError": "Delete error"
 }

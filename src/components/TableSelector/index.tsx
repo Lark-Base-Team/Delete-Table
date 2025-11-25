@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { bitable, ITableMeta, ToastType } from '@lark-base-open/js-sdk'
+import { useTablesLive } from '../../hooks/live/useTablesLive'
+import { useSelectionLive } from '../../hooks/live/useSelectionLive'
 import { Select, Button, Modal } from 'antd'
 
 interface TableSelectorProps {
@@ -13,26 +15,21 @@ interface TableSelectorProps {
 }
 
 export default function TableSelector(props: TableSelectorProps) {
-  const [list, setList] = useState<ITableMeta[]>([])
+  const list = useTablesLive()
   const [value, setValue] = useState<string | undefined>(props.value)
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading] = useState<boolean>(false)
   const [lang, setLang] = useState<string>('en')
   const [selectedIds, setSelectedIds] = useState<string[]>([])
   const [deleting, setDeleting] = useState<boolean>(false)
+  const selection = useSelectionLive()
 
   useEffect(() => {
-    setLoading(true)
-    Promise.all([bitable.base.getTableMetaList(), bitable.base.getSelection(), bitable.bridge.getLanguage()])
-      .then(([metaList, selection, language]) => {
-        setList(metaList)
-        setLang(language)
-        if (!value) setValue(selection.tableId || undefined)
-      })
-      .catch((e) => {
-        bitable.ui.showToast({ toastType: ToastType.error, message: typeof e?.message === 'string' ? e.message : 'Load tables failed' })
-      })
-      .finally(() => setLoading(false))
+    bitable.bridge.getLanguage().then(setLang).catch(() => {})
   }, [])
+
+  useEffect(() => {
+    if (!props.value && selection?.tableId) setValue(selection.tableId || undefined)
+  }, [selection, props.value])
 
   useEffect(() => {
     if (props.value !== undefined) setValue(props.value)
@@ -96,8 +93,6 @@ export default function TableSelector(props: TableSelectorProps) {
 
           if (props.onDeleted) props.onDeleted({ successIds, failIds })
 
-          const metaList = await bitable.base.getTableMetaList()
-          setList(metaList)
           setSelectedIds([])
 
           if (value && successIds.includes(value)) setValue(undefined)
